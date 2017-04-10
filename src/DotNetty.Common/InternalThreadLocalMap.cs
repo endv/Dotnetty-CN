@@ -10,9 +10,9 @@ namespace DotNetty.Common
     using DotNetty.Common.Utilities;
 
     /// <summary>
-    ///     The internal data structure that stores the thread-local variables for Netty and all {@link FastThreadLocal}s.
-    ///     Note that this class is for internal use only and is subject to change at any time.  Use {@link FastThreadLocal}
-    ///     unless you know what you are doing.
+    ///  内部线程本地映射，Netty 和所有 {@link FastThreadLocal}s 的存储线程局部变量的内部数据结构 
+    ///  请注意，此类仅用于内部使用，并随时更改。使用 {@link FastThreadLocal}
+    ///  除非你知道你在做什么。 
     /// </summary>
     public sealed class InternalThreadLocalMap
     {
