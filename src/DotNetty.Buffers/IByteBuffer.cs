@@ -12,6 +12,7 @@ namespace DotNetty.Buffers
     using DotNetty.Common.Utilities;
 
     /// <summary>
+    ///     字节缓冲区接口 提供了循环缓冲式安全字节数组，允许读取和写入独立发生的
     ///     Inspired by the Netty ByteBuffer implementation
     ///     (https://github.com/netty/netty/blob/master/buffer/src/main/java/io/netty/buffer/ByteBuf.java)
     ///     Provides circular-buffer-esque security around a byte array, allowing reads and writes to occur independently.
