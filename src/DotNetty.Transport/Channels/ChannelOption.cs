@@ -30,7 +30,7 @@ namespace DotNetty.Transport.Channels
         /// <summary>Returns {@code true} if a {@link ChannelOption} exists for the given {@code name}.</summary>
         public static bool Exists(string name) => Pool.Exists(name);
 
-        /// <summary>Creates a new {@link ChannelOption} for the given {@code name} or fail with an
+        /// <summary>通道选项 Creates a new {@link ChannelOption} for the given {@code name} or fail with an
         /// {@link IllegalArgumentException} if a {@link ChannelOption} for the given {@code name} exists.
         /// </summary>
         public static  ChannelOption<T> NewInstance<T>(string name) => (ChannelOption<T>)Pool.NewInstance<T>(name);
@@ -72,6 +72,10 @@ namespace DotNetty.Transport.Channels
         public abstract bool Set(IChannelConfiguration configuration, object value);
     }
 
+    /// <summary>
+    /// 通道选项
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public sealed class ChannelOption<T> : ChannelOption
     {
         internal ChannelOption(int id, string name)

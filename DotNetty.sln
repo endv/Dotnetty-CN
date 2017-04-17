@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.10
+VisualStudioVersion = 15.0.26403.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{F5B1CA65-5852-41C6-9D6F-184A3889237B}"
 	ProjectSection(SolutionItems) = preProject
@@ -92,6 +92,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telnet.Client", "examples\Telnet.Client\Telnet.Client.csproj", "{F2490822-51F7-4B65-8B21-EE0082B76745}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telnet.Server", "examples\Telnet.Server\Telnet.Server.csproj", "{07C97A77-61B6-4BB5-9436-3A7FC379B75E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testform", "testform\testform.csproj", "{FA9646B3-3003-4BA0-A1B2-BDD84EDE028E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -243,6 +245,10 @@ Global
 		{07C97A77-61B6-4BB5-9436-3A7FC379B75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07C97A77-61B6-4BB5-9436-3A7FC379B75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07C97A77-61B6-4BB5-9436-3A7FC379B75E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA9646B3-3003-4BA0-A1B2-BDD84EDE028E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9646B3-3003-4BA0-A1B2-BDD84EDE028E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA9646B3-3003-4BA0-A1B2-BDD84EDE028E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA9646B3-3003-4BA0-A1B2-BDD84EDE028E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -284,5 +290,6 @@ Global
 		{E2BEAAAE-497B-49F4-AD27-03BE20924311} = {F716F1EF-81EF-4020-914A-5422A13A9E13}
 		{F2490822-51F7-4B65-8B21-EE0082B76745} = {F716F1EF-81EF-4020-914A-5422A13A9E13}
 		{07C97A77-61B6-4BB5-9436-3A7FC379B75E} = {F716F1EF-81EF-4020-914A-5422A13A9E13}
+		{FA9646B3-3003-4BA0-A1B2-BDD84EDE028E} = {F716F1EF-81EF-4020-914A-5422A13A9E13}
 	EndGlobalSection
 EndGlobal

@@ -1,7 +1,10 @@
-﻿// Copyright (c) Microsoft. All rights reserved.
-// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace SecureChat.Server
+namespace testform
 {
     using System;
     using System.IO;
@@ -14,10 +17,9 @@ namespace SecureChat.Server
     using DotNetty.Transport.Channels;
     using DotNetty.Transport.Channels.Sockets;
     using Examples.Common;
-
-    class Program
+    class RunServer 
     {
-        static async Task RunServerAsync()
+     public static async Task RunServerAsync()
         {
             //在控制台命令中启用日志
             ExampleHelper.SetConsoleLogger();
@@ -34,7 +36,7 @@ namespace SecureChat.Server
             var SERVER_HANDLER = new SecureChatServerHandler();
 
             X509Certificate2 tlsCertificate = null;
-            if (ServerSettings.IsSsl)
+            if(ServerSettings.IsSsl)
             {
                 // 创建 X.509 证书 
                 tlsCertificate = new X509Certificate2(Path.Combine(ExampleHelper.ProcessDirectory, "dotnetty.com.pfx"), "password");
@@ -56,7 +58,7 @@ namespace SecureChat.Server
                     new ActionChannelInitializer<ISocketChannel>(channel =>
                     {
                         IChannelPipeline pipeline = channel.Pipeline;
-                        if (tlsCertificate != null)
+                        if(tlsCertificate != null)
                         {
                             //添加协议到最后
                             pipeline.AddLast(TlsHandler.Server(tlsCertificate));
@@ -79,6 +81,5 @@ namespace SecureChat.Server
             }
         }
 
-        static void Main() => RunServerAsync().Wait();//1
     }
 }
