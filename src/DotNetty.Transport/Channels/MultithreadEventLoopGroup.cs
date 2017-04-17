@@ -20,25 +20,28 @@ namespace DotNetty.Transport.Channels
         readonly IEventLoop[] eventLoops;
         int requestId;
 
-        /// <summary>Creates a new instance of <see cref="MultithreadEventLoopGroup"/>.</summary>
+        /// <summary>多线程事件循环组,创建一个新实例 <see cref="MultithreadEventLoopGroup"/>.</summary>
         public MultithreadEventLoopGroup()
             : this(DefaultEventLoopFactory, DefaultEventLoopThreadCount)
         {
         }
 
-        /// <summary>Creates a new instance of <see cref="MultithreadEventLoopGroup"/>.</summary>
+        /// <summary>多线程事件循环组,创建一个新实例 <see cref="MultithreadEventLoopGroup"/>.</summary>
         public MultithreadEventLoopGroup(int eventLoopCount)
             : this(DefaultEventLoopFactory, eventLoopCount)
         {
         }
 
-        /// <summary>Creates a new instance of <see cref="MultithreadEventLoopGroup"/>.</summary>
+        /// <summary>多线程事件循环组,创建一个新实例<see cref="MultithreadEventLoopGroup"/>.</summary>
         public MultithreadEventLoopGroup(Func<IEventLoopGroup, IEventLoop> eventLoopFactory)
             : this(eventLoopFactory, DefaultEventLoopThreadCount)
         {
         }
 
-        /// <summary>Creates a new instance of <see cref="MultithreadEventLoopGroup"/>.</summary>
+
+        /// <summary>创建一个新实例 <see cref="MultithreadEventLoopGroup"/>.</summary>
+        /// <param name="eventLoopFactory">事件循环工厂</param>
+        /// <param name="eventLoopCount">事件循环的计数</param>
         public MultithreadEventLoopGroup(Func<IEventLoopGroup, IEventLoop> eventLoopFactory, int eventLoopCount)
         {
             this.eventLoops = new IEventLoop[eventLoopCount];

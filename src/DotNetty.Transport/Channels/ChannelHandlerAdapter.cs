@@ -6,7 +6,9 @@ namespace DotNetty.Transport.Channels
     using System;
     using System.Net;
     using System.Threading.Tasks;
-
+    /// <summary>
+    /// 通道处理适配器
+    /// </summary>
     public class ChannelHandlerAdapter : IChannelHandler
     {
         internal bool Added;

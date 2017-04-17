@@ -38,19 +38,47 @@ namespace DotNetty.Transport.Channels
         bool IsWritable { get; }
 
         IChannelUnsafe Unsafe { get; }
-
+        /// <summary>
+        /// 管道
+        /// </summary>
         IChannelPipeline Pipeline { get; }
 
+        /// <summary>
+        /// 配置
+        /// </summary>
         IChannelConfiguration Configuration { get; }
 
+        /// <summary>
+        /// 关闭完成
+        /// </summary>
         Task CloseCompletion { get; }
 
+        /// <summary>
+        /// 注销异步
+        /// </summary>
+        /// <returns></returns>
         Task DeregisterAsync();
 
+        /// <summary>
+        /// 绑定异步
+        /// </summary>
+        /// <param name="localAddress">本地地址</param>
+        /// <returns></returns>
         Task BindAsync(EndPoint localAddress);
 
+        /// <summary>
+        /// 异步连接
+        /// </summary>
+        /// <param name="remoteAddress"></param>
+        /// <returns></returns>
         Task ConnectAsync(EndPoint remoteAddress);
 
+        /// <summary>
+        /// 异步连接
+        /// </summary>
+        /// <param name="remoteAddress"></param>
+        /// <param name="localAddress"></param>
+        /// <returns></returns>
         Task ConnectAsync(EndPoint remoteAddress, EndPoint localAddress);
 
         Task DisconnectAsync();

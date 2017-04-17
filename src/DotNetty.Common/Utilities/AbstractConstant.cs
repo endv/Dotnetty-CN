@@ -44,7 +44,7 @@ namespace DotNetty.Common.Utilities
         }
     }
 
-    /// <summary>Base implementation of <see cref="IConstant" />.</summary>
+    /// <summary>摘要常数 Base implementation of <see cref="IConstant" />.</summary>
     public abstract class AbstractConstant<T> : AbstractConstant, IComparable<T>, IEquatable<T>
         where T : AbstractConstant<T>
     {

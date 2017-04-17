@@ -5,6 +5,10 @@ namespace DotNetty.Transport.Channels
 {
     using DotNetty.Common.Utilities;
 
+    /// <summary>
+    /// 简单通道入站处理程序
+    /// </summary>
+    /// <typeparam name="I"></typeparam>
     public abstract class SimpleChannelInboundHandler<I> : ChannelHandlerAdapter
     {
         readonly bool autoRelease;

@@ -11,7 +11,7 @@ namespace DotNetty.Codecs
         public static IByteBuffer[] NullDelimiter() => new[] { Unpooled.WrappedBuffer(new byte[] { 0 }) };
 
         /// <summary>
-        ///     Returns {@code CR ('\r')} and {@code LF ('\n')} delimiters, which could
+        ///   行分隔符  Returns {@code CR ('\r')} and {@code LF ('\n')} delimiters, which could
         ///     be used for text-based line protocols.
         /// </summary>
         public static IByteBuffer[] LineDelimiter()

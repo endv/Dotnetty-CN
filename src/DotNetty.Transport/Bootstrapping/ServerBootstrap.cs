@@ -14,6 +14,7 @@ namespace DotNetty.Transport.Bootstrapping
     using DotNetty.Transport.Channels;
 
     /// <summary>
+    /// 引导 {@link Bootstrap} 的子类可以方便的引导 {@link ServerChannel}
     ///     {@link Bootstrap} sub-class which allows easy bootstrap of {@link ServerChannel}
     /// </summary>
     public class ServerBootstrap : AbstractBootstrap<ServerBootstrap, IServerChannel>
@@ -25,6 +26,9 @@ namespace DotNetty.Transport.Bootstrapping
         volatile IEventLoopGroup childGroup;
         volatile IChannelHandler childHandler;
 
+        /// <summary>
+        /// 服务器启动
+        /// </summary>
         public ServerBootstrap()
         {
             this.childOptions = new ConcurrentDictionary<ChannelOption, ChannelOptionValue>();
@@ -46,18 +50,21 @@ namespace DotNetty.Transport.Bootstrapping
         public override ServerBootstrap Group(IEventLoopGroup group) => this.Group(group, group);
 
         /// <summary>
+        /// 对于母集 事件循环组{@link EventLoopGroup} （受体）和孩子（客户端）。
+        /// 这些{@link EventLoopGroup}的用于处理所有的事件和IO为服务器信道{@link ServerChannel} 和信道{@link Channel}'s。
         ///     Set the {@link EventLoopGroup} for the parent (acceptor) and the child (client). These
         ///     {@link EventLoopGroup}'s are used to handle all the events and IO for {@link ServerChannel} and
-        ///     {@link Channel}'s.
+        ///     {@link Channel}'s.孩子组
         /// </summary>
         public ServerBootstrap Group(IEventLoopGroup parentGroup, IEventLoopGroup childGroup)
-        {
+        { 
+            //     为封闭方法或属性指定一个前置条件协定。
             Contract.Requires(childGroup != null);
 
             base.Group(parentGroup);
             if (this.childGroup != null)
             {
-                throw new InvalidOperationException("childGroup set already");
+                throw new InvalidOperationException("childGroup 已经设置 set already");
             }
             this.childGroup = childGroup;
             return this;
@@ -106,6 +113,7 @@ namespace DotNetty.Transport.Bootstrapping
         }
 
         /// <summary>
+        /// 设置{@链接channelhandler }这是用来服务请求{@链接通道}的。
         ///     Set the {@link ChannelHandler} which is used to serve the request for the {@link Channel}'s.
         /// </summary>
         public ServerBootstrap ChildHandler(IChannelHandler childHandler)

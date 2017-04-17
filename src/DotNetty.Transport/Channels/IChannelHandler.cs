@@ -7,6 +7,9 @@ namespace DotNetty.Transport.Channels
     using System.Net;
     using System.Threading.Tasks;
 
+    /// <summary>
+    /// 通道处理程序接口
+    /// </summary>
     public interface IChannelHandler
     {
         /// <summary>

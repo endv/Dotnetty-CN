@@ -9,7 +9,9 @@ namespace DotNetty.Transport.Channels
     using System.Net.NetworkInformation;
     using DotNetty.Buffers;
     using DotNetty.Common.Utilities;
-
+    /// <summary>
+    /// 通道选项
+    /// </summary>
     public abstract class ChannelOption : AbstractConstant<ChannelOption>
     {
         class ChannelOptionPool : ConstantPool

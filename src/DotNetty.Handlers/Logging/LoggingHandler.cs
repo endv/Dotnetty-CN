@@ -32,7 +32,8 @@ namespace DotNetty.Handlers.Logging
         }
 
         /// <summary>
-        ///     Creates a new instance whose logger name is the fully qualified class
+        ///    创建一个新实例的日志名称是完全限定类名的实例
+        ///    Creates a new instance whose logger name is the fully qualified class
         ///     name of the instance
         /// </summary>
         /// <param name="level">the log level</param>

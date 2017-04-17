@@ -32,6 +32,7 @@ namespace Examples.Common
 
         public static IConfigurationRoot Configuration { get; }
 
+        //设置控制台日志,在控制台命令中启用日志
         public static void SetConsoleLogger() => InternalLoggerFactory.DefaultFactory.AddProvider(new ConsoleLoggerProvider((s, level) => true, false));
     }
 }

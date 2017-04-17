@@ -13,7 +13,8 @@ namespace DotNetty.Buffers
     using DotNetty.Common.Utilities;
 
     /// <summary>
-    ///     Abstract base class implementation of a <see cref="IByteBuffer" />
+    ///   一个  <see cref="IByteBuffer" /> 的基类实现  
+    ///   Abstract base class implementation of a
     /// </summary>
     public abstract class AbstractByteBuffer : IByteBuffer
     {

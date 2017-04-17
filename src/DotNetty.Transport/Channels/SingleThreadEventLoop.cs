@@ -33,25 +33,25 @@ namespace DotNetty.Transport.Channels
         {
         }
 
-        /// <summary>Creates a new instance of <see cref="SingleThreadEventLoop"/>.</summary>
+        /// <summary>单线程事件循环,Creates a new instance of <see cref="SingleThreadEventLoop"/>.</summary>
         public SingleThreadEventLoop(IEventLoopGroup parent)
             : this(parent, null, DefaultBreakoutInterval)
         {
         }
 
-        /// <summary>Creates a new instance of <see cref="SingleThreadEventLoop"/>.</summary>
+        /// <summary>单线程事件循环Creates a new instance of <see cref="SingleThreadEventLoop"/>.</summary>
         public SingleThreadEventLoop(IEventLoopGroup parent, string threadName)
             : this(parent, threadName, DefaultBreakoutInterval)
         {
         }
 
-        /// <summary>Creates a new instance of <see cref="SingleThreadEventLoop"/>.</summary>
+        /// <summary>单线程事件循环,Creates a new instance of <see cref="SingleThreadEventLoop"/>.</summary>
         public SingleThreadEventLoop(IEventLoopGroup parent, string threadName, TimeSpan breakoutInterval)
             : base(parent, threadName, breakoutInterval)
         {
         }
 
-        /// <summary>Creates a new instance of <see cref="SingleThreadEventLoop"/>.</summary>
+        /// <summary>单线程事件循环,Creates a new instance of <see cref="SingleThreadEventLoop"/>.</summary>
         protected SingleThreadEventLoop(string threadName, TimeSpan breakoutInterval, IQueue<IRunnable> taskQueue)
             : base(null, threadName, breakoutInterval, taskQueue)
         {

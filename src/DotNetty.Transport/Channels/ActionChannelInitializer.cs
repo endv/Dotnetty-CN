@@ -12,6 +12,10 @@ namespace DotNetty.Transport.Channels
     {
         readonly Action<T> initializationAction;
 
+        /// <summary>
+        /// 信道初始化动作
+        /// </summary>
+        /// <param name="initializationAction">初始化动作</param>
         public ActionChannelInitializer(Action<T> initializationAction)
         {
             Contract.Requires(initializationAction != null);

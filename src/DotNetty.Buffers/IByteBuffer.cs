@@ -22,26 +22,38 @@ namespace DotNetty.Buffers
     /// </summary>
     public interface IByteBuffer : IReferenceCounted, IComparable<IByteBuffer>, IEquatable<IByteBuffer>
     {
+        /// <summary>
+        /// 容量
+        /// </summary>
         int Capacity { get; }
 
         /// <summary>
-        ///     Expands the capacity of this buffer so long as it is less than <see cref="MaxCapacity" />.
+        /// 调整容量 扩展该缓冲区的容量，只要它小于 <see cref="MaxCapacity" />.
         /// </summary>
         IByteBuffer AdjustCapacity(int newCapacity);
 
+        /// <summary>
+        /// 最大容量
+        /// </summary>
         int MaxCapacity { get; }
 
         /// <summary>
-        ///     The allocator who created this buffer
+        ///  分配器   创建此缓冲区的分配器
         /// </summary>
         IByteBufferAllocator Allocator { get; }
 
+        /// <summary>
+        /// 读索引
+        /// </summary>
         int ReaderIndex { get; }
 
+        /// <summary>
+        /// 写索引
+        /// </summary>
         int WriterIndex { get; }
 
         /// <summary>
-        ///     Sets the <see cref="WriterIndex" /> of this buffer
+        ///  设置可写索引   Sets the <see cref="WriterIndex" /> of this buffer
         /// </summary>
         /// <exception cref="IndexOutOfRangeException">thrown if <see cref="WriterIndex" /> exceeds the length of the buffer</exception>
         IByteBuffer SetWriterIndex(int writerIndex);
@@ -56,7 +68,7 @@ namespace DotNetty.Buffers
         IByteBuffer SetReaderIndex(int readerIndex);
 
         /// <summary>
-        ///     Sets both indexes
+        ///   设置索引  Sets both indexes
         /// </summary>
         /// <exception cref="IndexOutOfRangeException">
         ///     thrown if <see cref="WriterIndex" /> or <see cref="ReaderIndex" /> exceeds
@@ -64,8 +76,14 @@ namespace DotNetty.Buffers
         /// </exception>
         IByteBuffer SetIndex(int readerIndex, int writerIndex);
 
+        /// <summary>
+        /// 可读字节
+        /// </summary>
         int ReadableBytes { get; }
 
+        /// <summary>
+        /// 可写字节
+        /// </summary>
         int WritableBytes { get; }
 
         int MaxWritableBytes { get; }
@@ -118,7 +136,9 @@ namespace DotNetty.Buffers
         IByteBuffer ResetReaderIndex();
 
         /// <summary>
-        ///     Marks the current <see cref="WriterIndex" /> in this buffer. You can reposition the current
+        ///  标记作者索引  标记此缓冲区中的当前 <see cref="WriterIndex" /> 。
+        ///  您可以重新定位当前
+        ///  Marks the current <see cref="WriterIndex" /> in this buffer. You can reposition the current
         ///     <see cref="WriterIndex" />
         ///     to the marked <see cref="WriterIndex" /> by calling <see cref="ResetWriterIndex" />.
         ///     The initial value of the marked <see cref="WriterIndex" /> is <c>0</c>.
@@ -135,7 +155,8 @@ namespace DotNetty.Buffers
         IByteBuffer ResetWriterIndex();
 
         /// <summary>
-        ///     Discards the bytes between the 0th index and <see cref="ReaderIndex" />.
+        ///  丢弃零个索引与 <see cref="ReaderIndex" /> 之间的字节
+        ///  Discards the bytes between the 0th index and <see cref="ReaderIndex" />.
         ///     It moves the bytes between <see cref="ReaderIndex" /> and <see cref="WriterIndex" /> to the 0th index,
         ///     and sets <see cref="ReaderIndex" /> and <see cref="WriterIndex" /> to <c>0</c> and
         ///     <c>oldWriterIndex - oldReaderIndex</c> respectively.
@@ -749,10 +770,17 @@ namespace DotNetty.Buffers
 
         IByteBuffer Copy(int index, int length);
 
+        /// <summary>
+        /// 切片
+        /// </summary>
+        /// <returns></returns>
         IByteBuffer Slice();
 
         IByteBuffer Slice(int index, int length);
 
+        /// <summary>
+        /// 数组偏移
+        /// </summary>
         int ArrayOffset { get; }
 
         IByteBuffer ReadSlice(int length);
@@ -789,6 +817,7 @@ namespace DotNetty.Buffers
         int ForEachByte(int index, int length, ByteProcessor processor);
 
         /// <summary>
+        /// 在降序遍历指定  {@code processor}  这个缓冲区读取字节。
         ///     Iterates over the readable bytes of this buffer with the specified {@code processor} in descending order.
         /// </summary>
         /// <returns>
@@ -799,6 +828,7 @@ namespace DotNetty.Buffers
         int ForEachByteDesc(ByteProcessor processor);
 
         /// <summary>
+        /// 每个字节倒序 遍历指定区域，这个缓冲区与指定 {@code processor}  降序。
         ///     Iterates over the specified area of this buffer with the specified {@code processor} in descending order.
         ///     (i.e. {@code (index + length - 1)}, {@code (index + length - 2)}, ... {@code index})
         /// </summary>

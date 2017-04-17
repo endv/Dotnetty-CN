@@ -10,9 +10,10 @@ namespace DotNetty.Transport.Channels
     using DotNetty.Common.Concurrency;
 
     /// <summary>
-    ///     A list of {@link ChannelHandler}s which handles or intercepts inbound events and outbound operations of a
+    ///  通道管道   A list of {@link ChannelHandler}s which handles or intercepts inbound events and outbound operations of a
     ///     {@link Channel}.  {@link ChannelPipeline} implements an advanced form of the
-    ///     <a href="http://www.oracle.com/technetwork/java/interceptingfilter-142169.html">Intercepting Filter</a> pattern
+    ///     <a href="http://www.oracle.com/technetwork/java/interceptingfilter-142169.html">
+    ///     <a href="http://www.cnblogs.com/endv/p/6723078.html"> Intercepting Filter</a> pattern
     ///     to give a user full control over how an event is handled and how the {@link ChannelHandler}s in a pipeline
     ///     interact with each other.
     ///     <h3>Creation of a pipeline</h3>
@@ -280,7 +281,7 @@ namespace DotNetty.Transport.Channels
         IChannelPipeline AddFirst(IEventExecutorGroup group, params IChannelHandler[] handlers);
 
         /// <summary>
-        ///     Inserts a {@link ChannelHandler}s at the last position of this pipeline.
+        ///  添加最后的   Inserts a {@link ChannelHandler}s at the last position of this pipeline.
         ///     @param handlers  the handlers to insert last
         /// </summary>
         IChannelPipeline AddLast(params IChannelHandler[] handlers);

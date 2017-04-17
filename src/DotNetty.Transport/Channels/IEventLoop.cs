@@ -7,7 +7,7 @@ namespace DotNetty.Transport.Channels
     using DotNetty.Common.Concurrency;
 
     /// <summary>
-    /// <see cref="IEventExecutor"/> specialized to handle I/O operations of assigned <see cref="IChannel"/>s.
+    /// <see cref="IEventExecutor"/> 专门处理分配的 I/O 操作 I/O  <see cref="IChannel"/>s.
     /// </summary>
     public interface IEventLoop : IEventExecutor
     {

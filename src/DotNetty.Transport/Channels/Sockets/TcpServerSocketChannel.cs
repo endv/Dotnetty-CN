@@ -10,7 +10,9 @@ namespace DotNetty.Transport.Channels.Sockets
     using DotNetty.Common.Internal.Logging;
 
     /// <summary>
-    ///     A <see cref="IServerSocketChannel" /> implementation which uses Socket-based implementation to accept new
+    ///  服务器套接字通道   一个<see cref="IServerSocketChannel" />基于socket实现接受新的 
+    ///  
+    ///  A <see cref="IServerSocketChannel" /> implementation which uses Socket-based implementation to accept new
     ///     connections.
     /// </summary>
     public class TcpServerSocketChannel : AbstractSocketChannel, IServerSocketChannel

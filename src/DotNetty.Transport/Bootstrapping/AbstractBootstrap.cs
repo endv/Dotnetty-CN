@@ -16,12 +16,8 @@ namespace DotNetty.Transport.Bootstrapping
     using DotNetty.Transport.Channels;
 
     /// <summary>
-    ///     {@link AbstractBootstrap} is a helper class that makes it easy to bootstrap a {@link Channel}. It support
-    ///     method-chaining to provide an easy way to configure the {@link AbstractBootstrap}.
-    ///     <p>
-    ///         When not used in a {@link ServerBootstrap} context, the {@link #bind()} methods are useful for connectionless
-    ///         transports such as datagram (UDP).
-    ///     </p>
+    /// {@link AbstractBootstrap} 是辅助类，便于引导一个{@link Channel}。它支持方法链接到配置{@link AbstractBootstrap}提供一种简单的方法。
+    ///  <p>不使用时，在 {@link ServerBootstrap}中的，{@link #bind()} 方法对于无连接传输如数据报（UDP）非常有用。</p>
     /// </summary>
     public abstract class AbstractBootstrap<TBootstrap, TChannel>
         where TBootstrap : AbstractBootstrap<TBootstrap, TChannel>
@@ -54,6 +50,7 @@ namespace DotNetty.Transport.Bootstrapping
         }
 
         /// <summary>
+        ///  eventloopgroup是用来处理所有的要建立通道的事件
         ///     The {@link EventLoopGroup} which is used to handle all the events for the to-be-created
         ///     {@link Channel}
         /// </summary>
@@ -109,6 +106,8 @@ namespace DotNetty.Transport.Bootstrapping
         public TBootstrap LocalAddress(IPAddress inetHost, int inetPort) => this.LocalAddress(new IPEndPoint(inetHost, inetPort));
 
         /// <summary>
+        /// 允许指定{@链接channeloption }的{ } @链路信道情况下他们一旦得到了。
+        /// 使用价值{ @代码无效}删除前一组{@链接channeloption }。
         ///     Allow to specify a {@link ChannelOption} which is used for the {@link Channel} instances once they got
         ///     created. Use a value of {@code null} to remove a previous set {@link ChannelOption}.
         /// </summary>
@@ -307,7 +306,7 @@ namespace DotNetty.Transport.Bootstrapping
         protected abstract void Init(IChannel channel);
 
         /// <summary>
-        ///     the {@link ChannelHandler} to use for serving the requests.
+        /// TBootstrap 处理程序 用于服务请求  the {@link ChannelHandler} to use for serving the requests.
         /// </summary>
         public TBootstrap Handler(IChannelHandler handler)
         {

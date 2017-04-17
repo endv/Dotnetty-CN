@@ -3,8 +3,9 @@
 
 namespace DotNetty.Common.Utilities
 {
-    /// <summary>Holds <see cref="IAttribute{T}" />s which can be accessed via <see cref="AttributeKey{T}" />.</summary>
-    /// <remarks>Implementations must be Thread-safe.</remarks>
+    /// <summary>
+    /// 属性映射,持有 <see cref="IAttribute{T}" />s 可以通过 <see cref="AttributeKey{T}" /> </summary>
+    /// <remarks>实现必须是线程安全的。</remarks>
     public interface IAttributeMap
     {
         /// <summary>

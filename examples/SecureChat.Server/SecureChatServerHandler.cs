@@ -7,7 +7,9 @@ namespace SecureChat.Server
     using System.Net;
     using DotNetty.Transport.Channels;
     using DotNetty.Transport.Channels.Groups;
-
+    /// <summary>
+    /// 安全聊天服务器处理程序
+    /// </summary>
     public class SecureChatServerHandler : SimpleChannelInboundHandler<string>
     {
         static volatile IChannelGroup group;
