@@ -6,12 +6,22 @@ Dotnetty
 按项目的引用顺序翻译，当前项目 DotNetty.Common
 
 DotNetty.Common
+
 DotNetty.Buffers
+
 DotNetty.Codecs
+
 DotNetty.Codecs.Mqtt
+
 DotNetty.Codecs.ProtocolBuffers
+
 DotNetty.Codecs.Redis
+
 DotNetty.Codecs.Protobuf
+
 DotNetty.Handlers
+
 DotNetty.Transport
 
+
+QQ 交流群  194204929  287566232
